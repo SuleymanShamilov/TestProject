@@ -8,8 +8,8 @@ import org.testng.annotations.BeforeMethod;
 
 public class base {
 	public static WebDriver driver;
-	public static seleniumLibrary myLibrary;
-	
+	//public static seleniumLibrary myLibrary;
+	seleniumLibrary myLibrary = new seleniumLibrary(driver);
 @BeforeMethod
 	public void beforeEachTest() {
 	myLibrary.startChromeBrowser();
@@ -19,7 +19,7 @@ public class base {
 
 public void afterEachTest () {
 	
-		if (driver != null) {
+		if (driver !=  null) {
 		driver.quit();
 	}
 }
